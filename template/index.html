@@ -13,7 +13,7 @@
         font-family: 'Helvetica-Neue', 'HelveticaNeue', arial, sans-serif;
         color: #434343;
       }
-      
+
       .tc-card-name{
         font-weight:normal;
       }
@@ -25,12 +25,13 @@
         left:50%;
         margin-left:-160px;
       }
+
       .wrap {
           position: absolute;
-          top: 80%;
+          top: 90%;
           left: 50%;
           margin-top: -86px;
-          margin-left: -89px;
+          margin-left: -116px;
           text-align: center;
       }
 
@@ -64,6 +65,7 @@
       }
 
       a.button2 {
+          right: 20%;
           color: rgba(30, 22, 54, 0.6);
           box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
       }
@@ -72,9 +74,7 @@
           color: rgba(255, 255, 255, 0.85);
           box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
       }
-
     </style>
-    
   </head>
   
   <body>
@@ -88,7 +88,6 @@
     
     <script>
       $(document).ready(function () {
-
         // Define cards
         var cards = [
           new Tindercardsjs.card(0, 'london big ben', 'description of london big ben', 'gfx/pics/01.jpg'),
@@ -98,7 +97,6 @@
         ];
         // random shuffle the order of cards
         cards = shuffle(cards);
-
         // Render cards
         Tindercardsjs.render(cards, $('#main'), function (event) {
           userChoice = {
@@ -113,7 +111,7 @@
   </body>
 
   <div class="wrap">
-    <a href="#" class="button">Shuffle</a>
-    <a href="#" onclick="location.href = 'trip';" id="myButton"href="#" class="button2">Let's go!</a>
+    <a href="#" style="display: inline-block" class="button">Shuffle</a>
+    <a href="#" style="display: inline-block" onclick="location.href = 'trip';" id="myButton" href="#" class="button2">Let's go!</a>
   </div>
 </html>

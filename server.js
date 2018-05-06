@@ -1,23 +1,14 @@
-var http = require('http');
-var fs = require('fs');
+var express = require("express");
+var app     = express();
+var path    = require("path");
 
-function onRequest(request, response) {
-    response.writeHead(200, {'Content-Type': 'text/text'});
-    fs.readFile('./index.html', null, function(error, data){
-        if(error) {
-            response.writeHead(404);
-            response.write('Page Not Found...');
-        }else{
-            response.write(data);
-        }
-            response.end();
-    });
-}
+app.use("/gfx", express.static(path.join(__dirname + '/gfx')));
+app.use("/lib", express.static(path.join(__dirname + '/lib')));
 
-http.createServer(onRequest).listen(8000);
 
-/*
-module.exports.printMsg = function() {
-    console.log('start...');
-}
-*/
+app.get('/',function(req,res){
+    res.sendFile(path.join(__dirname+'/index.html'));
+    //__dirname : It will resolve to your project folder.
+});
+
+app.listen(3000);

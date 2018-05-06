@@ -7,7 +7,12 @@ app.use("/lib", express.static(path.join(__dirname + '/lib')));
 
 
 app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname+'/index.html'));
+    res.sendFile(path.join(__dirname+'/template/index.html'));
+    //__dirname : It will resolve to your project folder.
+});
+
+app.get('/trip',function(req,res){
+    res.sendFile(path.join(__dirname+'/template/trip.html'));
     //__dirname : It will resolve to your project folder.
 });
 

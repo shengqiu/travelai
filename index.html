@@ -49,12 +49,16 @@
           new Tindercardsjs.card(3, 'paris eiffle tower', 'description of eiffle tower', 'gfx/pics/04.jpg')
         ];
         // random shuffle the order of cards
-        //cards = shuffle(cards);
+        cards = shuffle(cards);
 
         // Render cards
         Tindercardsjs.render(cards, $('#main'), function (event) {
-          console.log('Swiped ' + event.direction + ', cardid is ' + event.cardid + ' and target is:');
-          console.log(event.card);
+          userChoice = {
+              'user': 'this user',
+              'destination': event.cardid,
+              'direction': event.direction
+          }
+          console.log(userChoice);
         });
       });
     </script>

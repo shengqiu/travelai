@@ -1,6 +1,6 @@
 var express = require("express");
-var app     = express();
-var path    = require("path");
+var app = express();
+var path = require("path");
 
 app.use("/gfx", express.static(path.join(__dirname + '/gfx')));
 app.use("/lib", express.static(path.join(__dirname + '/lib')));
@@ -12,3 +12,4 @@ app.get('/',function(req,res){
 });
 
 app.listen(3000);
+console.log("listening to 3000...");
